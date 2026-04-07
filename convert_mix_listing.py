@@ -1,6 +1,6 @@
 """
 convert_mix_listing.py
-version 0.1.1
+version 0.1.2
 revision date 04/07/2026
 
 Convert CommandAlkon's commandBATCH mix design listing into a nice
@@ -9,8 +9,8 @@ and readable format which can be imported into Keystone.
 Output:
   Excel Column A (col 0): Mix Design Name
   Excel Column B (col 1): Ingredient name
-  Excel Column C (col 2): Amount
-  Excel Column D (col 3): Unit (LB / OZ / etc.)
+  Excel Column C (col 2): Unit (LB / OZ / etc.)
+  Excel Column D (col 3): Amount 
 
 Usage:
   python convert_mix_listing.py [input.xls] [output.xls] [plant_separator]
