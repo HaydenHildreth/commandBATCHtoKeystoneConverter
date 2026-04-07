@@ -1,6 +1,7 @@
 """
 convert_mix_listing.py
-version 0.1.2
+author Hayden Hildreth
+version 0.1.3
 revision date 04/07/2026
 
 Convert CommandAlkon's commandBATCH mix design listing into a nice
