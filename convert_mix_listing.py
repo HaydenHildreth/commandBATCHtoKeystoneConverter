@@ -1,6 +1,6 @@
 """
 convert_mix_listing.py
-version 0.1.0
+version 0.1.1
 revision date 04/07/2026
 
 Convert CommandAlkon's commandBATCH mix design listing into a nice
@@ -9,9 +9,8 @@ and readable format which can be imported into Keystone.
 Output:
   Excel Column A (col 0): Mix Design Name
   Excel Column B (col 1): Ingredient name
-  Excel Column C (col 2): (unused)
-  Excel Column D (col 3): Amount
-  Excel Column E (col 4): Unit (lb / oz / etc.)
+  Excel Column C (col 2): Amount
+  Excel Column D (col 3): Unit (LB / OZ / etc.)
 
 Usage:
   python convert_mix_listing.py [input.xls] [output.xls] [plant_separator]
@@ -107,12 +106,12 @@ def write_output(mixes, path):
     for mix in mixes:
         name = mix['name']
 
-        # Write ingredients, skip header rows
+        # Write ingredient rows only -- no header or Name: rows
         for (ingredient, amount, ing_unit) in mix['ingredients']:
             ws.write(out_row, 0, name + PLANT_SEPARATOR)
             ws.write(out_row, 1, ingredient + PLANT_SEPARATOR)
+            ws.write(out_row, 2, ing_unit)
             ws.write(out_row, 3, amount)
-            ws.write(out_row, 4, ing_unit)
             out_row += 1
 
     wb.save(path)
